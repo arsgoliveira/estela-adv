@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Estela Sousa Advocacia
 
-## Getting Started
+Site institucional profissional para a advogada Estela Sousa, desenvolvido com Next.js 16, TypeScript e Tailwind CSS.
 
-First, run the development server:
+## Funcionalidades
+
+- **Design responsivo** - Adaptado para desktop, tablet e mobile
+- **Hero** - Destaque com slogan "A lei existe!" e CTAs
+- **Sobre** - Apresentação da advogada e especialidades
+- **Áreas de Atuação** - 6 áreas com cards expansíveis
+- **Depoimentos** - Carrossel de depoimentos de clientes
+- **Consulta de Processos** - Links para portais oficiais (PJe, CNJ)
+- **Contato** - WhatsApp, e-mail e Instagram
+
+## Tecnologias
+
+- Next.js 16 (App Router)
+- TypeScript
+- Tailwind CSS v4
+- Framer Motion (animações)
+- Lucide React (ícones)
+
+## Como rodar
 
 ```bash
+# Instalar dependências (já feito)
+npm install
+
+# Desenvolvimento
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build para produção
+npm run build
+
+# Rodar em produção
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acesse [http://localhost:3000](http://localhost:3000) no navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Personalização
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Dados de contato**: Edite `lib/constants.ts`
+- **Depoimentos**: Adicione ou altere em `lib/constants.ts` → `DEPOIMENTOS`
+- **Áreas de atuação**: Edite `lib/constants.ts` → `AREAS_ATUACAO`
+- **Foto da advogada**: Adicione em `public/images/` e atualize o componente `Sobre.tsx`
 
-## Learn More
+## Deploy
 
-To learn more about Next.js, take a look at the following resources:
+O projeto está pronto para deploy na [Vercel](https://vercel.com):
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Conecte o repositório Git
+2. O build será automático
+3. Domínio customizado pode ser configurado nas configurações
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Estrutura
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+app/
+├── layout.tsx      # Layout global (Header, Footer)
+├── page.tsx        # Página inicial
+├── consulta/       # Página de consulta de processos
+components/
+├── layout/         # Header, Footer
+└── sections/       # Hero, Sobre, Áreas, Depoimentos, etc.
+lib/
+└── constants.ts    # Dados estáticos
+```
