@@ -1,68 +1,66 @@
 # Estela Sousa Advocacia
 
-Site institucional profissional para a advogada Estela Sousa, desenvolvido com Next.js 16, TypeScript e Tailwind CSS.
+Site institucional profissional para a advogada Estela Sousa, desenvolvido com foco em credibilidade, clareza de navegacao e contato rapido com potenciais clientes.
+
+## Visao geral
+
+Este projeto foi construido para apresentar os servicos do escritorio de forma moderna, responsiva e objetiva. A estrutura prioriza leitura facil, reforco de autoridade profissional e CTAs diretos para atendimento.
+
+## Stack
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS v4
+- Framer Motion
+- Lucide React
 
 ## Funcionalidades
 
-- **Design responsivo** - Adaptado para desktop, tablet e mobile
-- **Hero** - Destaque com slogan "A lei existe!" e CTAs
-- **Sobre** - Apresentação da advogada e especialidades
-- **Áreas de Atuação** - 6 áreas com cards expansíveis
-- **Depoimentos** - Carrossel de depoimentos de clientes
-- **Consulta de Processos** - Links para portais oficiais (PJe, CNJ)
-- **Contato** - WhatsApp, e-mail e Instagram
+- Layout responsivo para desktop, tablet e mobile
+- Hero com mensagem principal e chamadas para acao
+- Secao institucional com apresentacao da profissional
+- Areas de atuacao com cards expansivos
+- Carrossel de depoimentos
+- Pagina de consulta de processos com links oficiais
+- Contato por WhatsApp, e-mail e Instagram
 
-## Tecnologias
+## Estrutura do projeto
 
-- Next.js 16 (App Router)
-- TypeScript
-- Tailwind CSS v4
-- Framer Motion (animações)
-- Lucide React (ícones)
+```text
+app/
+components/
+lib/
+public/
+```
 
-## Como rodar
+## Personalizacao
+
+- Dados de contato: `lib/constants.ts`
+- Depoimentos: `lib/constants.ts`
+- Areas de atuacao: `lib/constants.ts`
+- Conteudos e secoes: componentes em `components/sections`
+
+## Como rodar localmente
 
 ```bash
-# Instalar dependências (já feito)
 npm install
-
-# Desenvolvimento
 npm run dev
+```
 
-# Build para produção
+Depois, acesse `http://localhost:3000`.
+
+## Build de producao
+
+```bash
 npm run build
-
-# Rodar em produção
 npm start
 ```
 
-Acesse [http://localhost:3000](http://localhost:3000) no navegador.
-
-## Personalização
-
-- **Dados de contato**: Edite `lib/constants.ts`
-- **Depoimentos**: Adicione ou altere em `lib/constants.ts` → `DEPOIMENTOS`
-- **Áreas de atuação**: Edite `lib/constants.ts` → `AREAS_ATUACAO`
-- **Foto da advogada**: Adicione em `public/images/` e atualize o componente `Sobre.tsx`
-
 ## Deploy
 
-O projeto está pronto para deploy na [Vercel](https://vercel.com):
+O projeto esta pronto para deploy na [Vercel](https://vercel.com), com build automatica a partir do repositorio.
 
-1. Conecte o repositório Git
-2. O build será automático
-3. Domínio customizado pode ser configurado nas configurações
+## Objetivo do projeto
 
-## Estrutura
-
-```
-app/
-├── layout.tsx      # Layout global (Header, Footer)
-├── page.tsx        # Página inicial
-├── consulta/       # Página de consulta de processos
-components/
-├── layout/         # Header, Footer
-└── sections/       # Hero, Sobre, Áreas, Depoimentos, etc.
-lib/
-└── constants.ts    # Dados estáticos
-```
+Demonstrar a construcao de um site profissional em `Next.js` com foco em experiencia do usuario, performance, organizacao de componentes e facilidade de manutencao.
