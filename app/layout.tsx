@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-serif",
@@ -40,6 +41,7 @@ export default function RootLayout({
         <Header />
         <main className="pt-20">{children}</main>
         <Footer />
+        <WhatsAppFloat />
       </body>
     </html>
   );

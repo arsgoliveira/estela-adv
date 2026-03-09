@@ -13,7 +13,8 @@ export function Sobre() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl"
+            whileHover={{ scale: 1.02 }}
+            className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl transition-transform duration-500"
           >
             <Image
               src="/estela-sousa.png"
@@ -31,15 +32,15 @@ export function Sobre() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-amber-950 mb-6">
+            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900 mb-6">
               Advocacia Estratégica e Soluções Jurídicas
             </h2>
-            <p className="text-amber-900/80 leading-relaxed mb-6">
+            <p className="text-slate-800/80 text-lg leading-relaxed mb-6">
               Advogada com pós-graduação em Direito do Trabalho e Processo do Trabalho,
               atuando em todo o Brasil nas áreas de Direito do Trabalho, Família, Civil,
               Consumidor e Previdenciário.
             </p>
-            <p className="text-amber-900/80 leading-relaxed">
+            <p className="text-slate-800/80 text-lg leading-relaxed">
               Comprometida com a excelência técnica, atendimento humanizado e soluções
               jurídicas eficazes, sempre pautada na ética e na defesa dos direitos de
               seus clientes.

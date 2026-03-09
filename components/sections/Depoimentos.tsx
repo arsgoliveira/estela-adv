@@ -44,10 +44,10 @@ export function Depoimentos() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-amber-950 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900 mb-4">
             O que dizem nossos clientes
           </h2>
-          <p className="text-amber-900/70 max-w-2xl mx-auto">
+          <p className="text-slate-700 text-lg max-w-2xl mx-auto">
             Depoimentos de quem confiou na nossa advocacia
           </p>
         </motion.div>
@@ -65,22 +65,31 @@ export function Depoimentos() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="flex-shrink-0 w-[320px] sm:w-[360px] bg-amber-50 rounded-2xl p-6 border border-amber-900/5"
+                whileHover={{ scale: 1.03, y: -4 }}
+                className="flex-shrink-0 w-[320px] sm:w-[360px] bg-slate-50 rounded-2xl p-6 border border-slate-800/5 hover:shadow-xl hover:shadow-sky-500/10 hover:border-sky-400/30 transition-all duration-300"
               >
-                <Quote className="text-amber-300 mb-4" size={32} />
+                <Quote className="text-sky-300 mb-4" size={32} />
                 <div className="flex gap-1 mb-4">
                   {Array.from({ length: depoimento.avaliacao }).map((_, i) => (
-                    <Star
+                    <motion.span
                       key={i}
-                      size={18}
-                      className="fill-amber-500 text-amber-500"
-                    />
+                      initial={{ opacity: 0, scale: 0 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 + i * 0.05 }}
+                      className="inline-flex"
+                    >
+                      <Star
+                        size={18}
+                        className="fill-sky-500 text-sky-500"
+                      />
+                    </motion.span>
                   ))}
                 </div>
-                <p className="text-amber-900/80 text-sm leading-relaxed mb-4">
+                <p className="text-slate-700 text-base leading-relaxed mb-4">
                   &ldquo;{depoimento.texto}&rdquo;
                 </p>
-                <p className="font-semibold text-amber-950 text-sm">
+                <p className="font-semibold text-slate-900 text-base">
                   {depoimento.nome}
                 </p>
               </motion.div>
@@ -88,22 +97,26 @@ export function Depoimentos() {
           </div>
 
           <div className="hidden md:flex justify-center gap-4 mt-8">
-            <button
+            <motion.button
               onClick={() => scroll("left")}
               disabled={!canScrollLeft}
-              className="p-2 rounded-full border border-amber-900/20 text-amber-900 disabled:opacity-40 disabled:cursor-not-allowed hover:bg-amber-50 transition-colors"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              className="p-2 rounded-full border border-slate-800/20 text-slate-800 disabled:opacity-40 disabled:cursor-not-allowed hover:bg-slate-50 hover:border-sky-400/40 transition-colors"
               aria-label="Anterior"
             >
               ←
-            </button>
-            <button
+            </motion.button>
+            <motion.button
               onClick={() => scroll("right")}
               disabled={!canScrollRight}
-              className="p-2 rounded-full border border-amber-900/20 text-amber-900 disabled:opacity-40 disabled:cursor-not-allowed hover:bg-amber-50 transition-colors"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              className="p-2 rounded-full border border-slate-800/20 text-slate-800 disabled:opacity-40 disabled:cursor-not-allowed hover:bg-slate-50 hover:border-sky-400/40 transition-colors"
               aria-label="Próximo"
             >
               →
-            </button>
+            </motion.button>
           </div>
         </div>
       </div>

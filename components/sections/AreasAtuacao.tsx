@@ -26,7 +26,7 @@ export function AreasAtuacao() {
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
   return (
-    <section id="areas" className="py-24 bg-amber-50/50">
+    <section id="areas" className="py-24 bg-slate-50/50 bg-pattern-dots">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -34,10 +34,10 @@ export function AreasAtuacao() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-amber-950 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900 mb-4">
             Áreas de Atuação
           </h2>
-          <p className="text-amber-900/70 max-w-2xl mx-auto">
+          <p className="text-slate-700 text-lg max-w-2xl mx-auto">
             Atendimento especializado em diversas áreas do Direito
           </p>
         </motion.div>
@@ -54,25 +54,26 @@ export function AreasAtuacao() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                className="bg-white rounded-2xl shadow-sm border border-amber-900/5 overflow-hidden hover:shadow-md transition-shadow"
+                whileHover={{ y: -4 }}
+                className="bg-white rounded-2xl shadow-sm border border-slate-800/5 overflow-hidden hover:shadow-xl hover:shadow-sky-500/10 hover:border-sky-400/30 transition-all duration-300 cursor-pointer"
               >
                 <button
                   onClick={() => setExpandedId(isExpanded ? null : area.id)}
-                  className="w-full p-6 text-left flex items-start justify-between gap-4"
+                  className="w-full p-6 text-left flex items-start justify-between gap-4 group"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-xl bg-amber-100 text-amber-900">
+                    <div className="p-3 rounded-xl bg-sky-100 text-slate-800 group-hover:scale-110 group-hover:bg-sky-200 transition-all duration-300">
                       <Icon size={24} />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-amber-950">{area.titulo}</h3>
-                      <p className="text-sm text-amber-900/60 mt-1">
+                      <h3 className="font-semibold text-slate-900">{area.titulo}</h3>
+                      <p className="text-base text-slate-600 mt-1">
                         {area.itens.length} especialidades
                       </p>
                     </div>
                   </div>
                   <ChevronDown
-                    className={`flex-shrink-0 text-amber-900/60 transition-transform ${
+                    className={`flex-shrink-0 text-slate-600 transition-transform ${
                       isExpanded ? "rotate-180" : ""
                     }`}
                     size={20}
@@ -87,9 +88,9 @@ export function AreasAtuacao() {
                     {area.itens.map((item) => (
                       <li
                         key={item}
-                        className="text-sm text-amber-900/80 flex items-center gap-2"
+                        className="text-base text-slate-700 flex items-center gap-2"
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-amber-600" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-sky-600" />
                         {item}
                       </li>
                     ))}
