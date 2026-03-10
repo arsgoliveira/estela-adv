@@ -116,4 +116,5 @@ export const DEPOIMENTOS = [
 export const CONSULTA_ESAJ_1GRAU_URL = "https://esaj.tjsp.jus.br/cpopg/open.do";
 export const CONSULTA_ESAJ_2GRAU_URL = "https://esaj.tjsp.jus.br/cposg/open.do";
 export const CONSULTA_CNJ_URL = "https://www.cnj.jus.br/sistemas/processo-eletronico/";
-export const CONSULTA_PJE_URL = "https://pje.tjsp.jus.br/pje/ConsultaPublica/listView.seam";
+export const CONSULTA_PJE_URL =
+  "https://eproc-consulta.tjsp.jus.br/consulta_1g/externo_controlador.php?acao=tjsp@consulta_unificada_publica/consultar";
